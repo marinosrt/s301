@@ -5,8 +5,8 @@ import n2exercici1.Factories.AbstractFactory;
 public class ContactBook {
 
     //variable to keep track if there's some contacts inside the ContactBook
-    static int contactsAdded = 0;
-    static AbstractFactory abstractFactory;
+    static private int contactsAdded = 0;
+    static private AbstractFactory abstractFactory;
 
     public static void addContact(){
         contactsAdded++;
