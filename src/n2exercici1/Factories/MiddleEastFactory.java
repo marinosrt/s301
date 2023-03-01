@@ -8,7 +8,7 @@ public class MiddleEastFactory extends AbstractFactory {
     @Override
     public Contact getContact(String country){
 
-        switch (country){
+        switch (country.toLowerCase()){
             case "morocco" -> {
                 super.contact = new Morocco(Tools.getString("\nContact Name?"),
                         Tools.getString("Contact surname?"),

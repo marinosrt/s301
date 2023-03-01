@@ -16,9 +16,9 @@ public class Main {
     }
 
     private static void menu() {
-        int klk;
+        int option;
 
-        Undo undo = Undo.getUndo();
+        Undo undo = Undo.getInstance();
 
         do {
             System.out.println("""
@@ -27,15 +27,15 @@ public class Main {
                     1. Add command.
                     2. Delete command.
                     3. Prompt all inserted commands.""");
-            klk = getInt("\nChoose an option.");
+            option = getInt("\nChoose an option.");
 
-            switch (klk) {
+            switch (option) {
                 case 0 -> System.out.println("Bye!");
                 case 1 -> addCommand(undo);
                 case 2 -> deleteCommand(undo);
                 case 3 -> promptCommands(undo);
             }
-        } while (klk != 0);
+        } while (option != 0);
     }
 
     private static void addCommand(Undo undo) {
@@ -57,7 +57,7 @@ public class Main {
         if (!first){
             System.out.println("\nNo previous commands to show. Add a command first.\n");
         } else {
-            undo.listAllCommands(getInt("\nHow many commands do you want to see?"));
+            undo.listCommands(getInt("\nHow many commands do you want to see?"));
         }
     }
 }

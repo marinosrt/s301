@@ -14,7 +14,7 @@ public class Undo {
 
     }
 
-    public static Undo getUndo(){
+    public static Undo getInstance(){
         if (undo == null){
             undo = new Undo();
         }
@@ -40,7 +40,7 @@ public class Undo {
         }
     }
 
-    public void listAllCommands (int numCom){
+    public void listCommands(int numCom){
         if (commandList == null){
             System.out.println("\nNo previous commands to prompt out");
         } else {
